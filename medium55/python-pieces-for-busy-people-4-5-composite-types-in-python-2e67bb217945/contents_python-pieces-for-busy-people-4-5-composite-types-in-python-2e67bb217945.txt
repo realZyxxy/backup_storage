@@ -1,0 +1,273 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/python-pieces-for-busy-people-4-5-composite-types-in-python-2e67bb217945?source=about_page-------------------------------------&sk=5ee725548a109f3ab19dc5afe57aef30 **
+************************************************************
+
+
+# Python Pieces For Busy People 4/5: “Composite” Types in Python
+
+## General-purpose containers, tables and user-defined classes
+
+# Overview
+
+There are five 1-dimensional, general-purpose native Python containers. The main difference between them is how the elements can be accessed:
+
+  * [ **range**](https://docs.python.org/3/library/stdtypes.html#range): its main use is for iteration, its elements are very rarely accessed through indices;
+  * [ **list**](https://www.w3schools.com/python/python_lists.asp) **and**[ **tuple**](https://www.w3schools.com/python/python_tuples.asp) **:** their elements are indexed by integer numbers;
+  * [ **dictionary**](https://www.w3schools.com/python/python_dictionaries.asp) **:** its elements’ indices are defined by the user;
+  * [ **set**](https://www.w3schools.com/python/python_sets.asp) **:** a collection of data without indices.
+
+
+
+Two commonly used Python packages, [**pandas**](https://www.w3schools.com/python/pandas/default.asp) and [**numpy**](https://www.w3schools.com/python/numpy/default.asp), provide specialised yet widely used containers:
+
+  * pandas provides hugely popular [**dataframe**](https://www.w3schools.com/python/pandas/pandas_dataframes.asp) **** (2-dimensional) and less used [**series**](https://www.w3schools.com/python/pandas/pandas_series.asp) (1-dimensional). Dataframes mimic Excel tables and database tables, thus their success;
+  * numpy provides [**ndarray**](https://www.w3schools.com/python/numpy/numpy_creating_arrays.asp), which can have any number of dimensions, and it optimised for mathematical operations.
+
+
+
+Finally, [**user-defined classes**](https://www.w3schools.com/python/python_classes.asp) are the most flexible of Python “composite” types. In most cases, it’s better to use the existing language tools than to create your own.
+
+# How Much These Types Are Used?
+
+The chart below gives some idea about the relative frequency of usage of each type mentioned above. Note that shows the number of questions on [**stackoverflow.com**](/@real.zyxxy/python-learning-for-busy-people-1-3-resources-a81cd604cd99?sk=d642604346531c1fedf6a3b28fa7eb52); `class` and `dataframe` have relatively high number of questions because they are much less obvious than `list` and `dictionary`.
+
+The code that built this chart is here → [https://replit.com/@zyxxy/PythonCompositeTypes](https://replit.com/@zyxxy/PythonCompositeTypes?v=1)
+
+# Ranges
+
+Unlike what most Python tutorials say, [**range**](https://docs.python.org/3/library/stdtypes.html#range) is not the name of the function, [**range is the name of the type**](https://docs.python.org/3/library/functions.html#func-range). It is commonly used for iteration.
+    
+    
+    # printing the same line 100 times  
+    # the counter is not used, thus it's replaced by `_`  
+    for _ in range(100):  
+      print("I am sorry!")   
+      
+    # printing the same line 100 times  
+    # the counter is variable `i`, it goes from 1 to 100 inclusive  
+    for i in range(1, 101):  
+      if i % 10 == 1 and i != 11:  
+        ending = 'st'  
+      elif i % 10 == 2 and i != 12:  
+        ending = 'nd'  
+      elif i % 10 == 3 and i != 13:  
+        ending = 'rd'  
+      else:  
+        ending = 'th'  
+      print(f"Let me say it for the {i}{ending} time: I am sorry!")
+
+#  **Lists and Tuples**
+
+Lists and tuples are the most common containers.   
+Lists are delimited by **[]s** and tuples are delimited by **()s**.   
+You can change the elements of lists, but tuples are faster.
+
+## Indexation of Lists and Tuples
+
+Note that the index of the first element is 0, and the index of the last element is **n-1** (assuming that there are **n** elements in the container).
+
+This is why this story, **the last one in the series of five** , is called “Python Pieces For Busy People **4** /5".
+    
+    
+    a_list = [3.33, 1, "A", True]  
+    print("First element of a_list is", a_list[0]) # prints 3.33  
+    print("Last element of a_list is", a_list[-1]) # prints True  
+    a_list[1] = 42 # changing the value of the second element of a_list  
+    print(a_list) # prints [3.33, 42, "A", True]  
+      
+    a_tuple = (0, False, "BB", 99.99)  
+    print("Second element of a_tuple is", a_tuple[1]) # prints False  
+    print("Second from the last element of a_tuple is", a_tuple[-2])   
+    # prints "BB"  
+    a_list[1] = 42 # ERROR! You cannot change the elements of a tuple
+
+## Operators Applicable To Lists and Tuples
+
+Lists and tuples support many [**methods**](https://www.w3schools.com/python/python_lists_methods.asp), and operators such as **==** , **!=** , and also **<** and **>** for the lists made of elements of comparable type.   
+Operators **+** , **+=** , ***** and ***=** are particularly unexpected, and useful:
+    
+    
+    short_list = ["a", 2]  
+    longer_list = short_list + [33, 56] # add [33, 56] at the end  
+    print(longer_list) # prints ["a", 2, 33, 56]  
+    longer_list += [0.07, True] # now add [0.07, True] at the end  
+    print(longer_list) # prints ["a", 2, 33, 56, 0.07, True]  
+      
+    long_tuple = ("S", "T") * 100 # replicate ("S", "T") 100 times  
+    print("The length of long_tuple is", len(long_tuple)) #prints 200  
+    print("Its first 20 elements are", long_tuple[:20])  
+    # prints ('S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T', 'S', 'T')  
+    long_tuple *= 3  
+    print("The new length of long_tuple is", len(long_tuple)) #prints 600  
+    
+
+## Common Pitfall With Copying Lists
+
+Note that for technical reasons, when you copy a tuple, you create a new one. However, when you copy an list, you only copy its address, and thus changing the copy of the list will also change the original.
+    
+    
+    a_tuple = (2, 3, 5) # creating the original tuple  
+    b_tuple = a_tuple # copying  
+    b_tuple *= 2 # changing the copy  
+    # now printing both. The original tuple has NOT been changed  
+    print(a_tuple, b_tuple)  
+    # prints (2, 3, 5) (2, 3, 5, 2, 3, 5)  
+      
+    a_list = [2, 3, 5] # creating the original list  
+    b_list = a_list # copying  
+    b_list *= 2 # changing the copy  
+    # now printing both. The original tuple HAS been changed  
+    print(a_list, b_list)  
+    # prints [2, 3, 5, 2, 3, 5] [2, 3, 5, 2, 3, 5]
+
+To avoid this, use [**comprehension**](https://www.w3schools.com/python/python_lists_comprehension.asp) to copy the original list element by element:
+    
+    
+    a_list = [2, 3, 5] # creating the original list  
+    b_list = [element for element in a_list] # comprehension  
+    b_list *= 2 # changing the copy  
+    # now printing both. The original tuple HAS been changed  
+    print(a_list, b_list)  
+    # prints [2, 3, 5] [2, 3, 5, 2, 3, 5]
+
+# Dictionaries
+
+In some situations, you might prefer to keep the similar values in the same container, but indexing them by integer numbers is not meaningful. One such example is a custom colour palette: the values, [RGB colour codes](https://www.canva.com/colors/color-wheel/), can be indexed by names such as `superBlue`, not by numbers. In such situations one should use the [**dictionaries**](https://www.w3schools.com/python/python_dictionaries.asp).
+    
+    
+    my_color_palette = {'superBlue'   : '#648fff',  
+                         'superViolet' : '#785ef0',  
+                         'superPink'   : '#dc267f',  
+                         'superOrange' : '#fe6100',  
+                         'superGold'   : '#ffb000'}  
+    print(my_color_palette['superBlue']) # prints #648fff
+
+# Sets
+
+[ **Sets**](https://www.w3schools.com/python/python_sets.asp), unordered collections of values, are the least used, and perhaps the most underrated standard Python container.   
+Set is the only standard Python container to support methods the **comparison**[ **methods**](https://www.w3schools.com/python/python_sets_methods.asp) such as _intersection_ , _difference_ , _isdisjoint_ , _issubset_ and _issuperset_.
+    
+    
+    x = {"apple", "banana", "cherry"}  
+    y = {"google", "microsoft", "apple"}  
+    z = x.intersection(y)   
+    print(z) # prints `apple`
+
+# Lists of Lists
+
+The most basic way to store 2-dimensional data is to use the lists of lists:
+    
+    
+    list_of_lists = [[1, 2, 3], [2, 4, 6], [3, 6, 9]]  
+    print(list_of_lists[1]) # prints [2, 4, 6]
+
+It’s a perfectly valid format, but other multidimensional data formats could be better because they come with many useful methods, and have better performance.
+
+# Pandas.Dataframes And Pandas.Series
+
+Pandas’s [**series**](https://www.w3schools.com/python/pandas/pandas_series.asp) are similar to lists and dictionaries. They are relatively rarely used.
+    
+    
+    import pandas as pd   
+      
+    series_with_indices_01234 = pd.Series([1, 1, 2, 3, 5])  
+    series_with_string_indices = pd.Series({'pawn' : 8, 'bishop' : 2,   
+      'knight' : 2, 'rook' : 2, 'queen' : 1, 'king' : 'one'})  
+      
+    print(series_with_indices_01234, series_with_string_indices)
+
+Pandas’s [**dataframes**](https://www.w3schools.com/python/pandas/pandas_dataframes.asp), on the other hand, are extremely popular, because they have the same structure as Excel and database tables. They support [**hundreds of useful methods**](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html).   
+To illustrate how dataframes could be used, I have added the code snippet that will fetch and print financial data of Microsoft for the last 5 trading days
+    
+    
+    import yfinance as yf  
+       
+    # get Microsoft ('MSFT') data object  
+    msft = yf.Ticker('MSFT')  
+       
+    # get historical prices etc. of 'MSFT'  
+    historical_prices_etc = msft.history()  
+       
+    # printing historical_prices_etc for 5 most recent dates  
+    print(historical_prices_etc[:-6:-1])
+
+The result will be stored in a dataframe which, when printed, will look like below.
+    
+    
+                                     Open        High         Low       Close    Volume  Dividends  Stock Splits  
+    Date                                                                                                          
+    2023-06-05 00:00:00-04:00  335.220001  338.549988  334.660095  335.940002  21241193        0.0           0.0  
+    2023-06-02 00:00:00-04:00  334.250000  337.500000  332.549988  335.399994  25864000        0.0           0.0  
+    2023-06-01 00:00:00-04:00  325.929993  333.529999  324.720001  332.579987  26773900        0.0           0.0  
+    2023-05-31 00:00:00-04:00  332.290009  335.940002  327.329987  328.390015  45950600        0.0           0.0  
+    2023-05-30 00:00:00-04:00  335.230011  335.739990  330.519989  331.209991  29503100        0.0           0.0
+
+# Numpy.ndarray
+
+Python library [**numpy**](https://www.w3schools.com/python/numpy/default.asp) provides data type [**ndarray**](https://www.w3schools.com/python/numpy/numpy_creating_arrays.asp).   
+Ndarrays are multidimesional arrays optimised for mathematical operations. Using them can be up to **50x faster** than implementing the mathematical operations in Python.
+    
+    
+    import numpy as np  
+    # we define two 1-dim arrays  
+    x = np.array([100, 200])  
+    y = np.array([1, 10])  
+      
+    # let's subtract y from x  
+    print(x - y) # will print [99, 190]  
+      
+    # we define a 2-dim array, i.e. a matrix  
+    m = np.array([[1, 2], [3, 4]])  
+    # we multiply this matrix by an array  
+    print(m * y) # will print [[ 1 20] [ 3 40]]  
+      
+    # we compute the multiple linear regression coefficients   
+    # using the classical formula  
+    # source: https://www2.lawrence.edu/fast/GREGGJ/Python/numpy/numpyLA.html  
+    m_t = np.transpose(m)  
+    m_t_m = np.dot(m_t, m)  
+    m_t_y = np.dot(m_t, y)  
+    beta = np.linalg.solve(m_t_m, m_t_y)  
+    print(beta) # [ 8.  -3.5], this is the solution  
+    # let's check that our solution is correct  
+    print(np.dot(m, beta) - y) # prints almost-zero array, [-1.4e-14 7.1e-15]
+
+# User-defined Classes
+
+In Python, any data type, even the simplest one, is a [**class**](https://www.w3schools.com/python/python_classes.asp). Classes are a collection of the data, and some class-specific functions (called “methods”) that manipulate the data, and called as shown above. Creating your own classes is complicated and rarely useful.
+
+One situation when it can be needed is if the package you are using requires you to create a derived class, e.g. as on this MIT lecture video:
+
+MIT Introduction to Deep Learning (2022) | 6.S191, <https://youtu.be/7sB052Pz0sQ?t=1348>
+
+The methods of classes are called as ` <variable>.<method_name>() `, sometimes with the list of arguments between the brackets, see the examples below.
+    
+    
+    a_string = "This is a dummy string"  
+    words = a_string.split() # `split` is a method of built-in class `str`  
+    print(a_string, "is made of the following words:", words)  
+    length_of_the_string = len(a_string) # `len` is a function  
+    print("The length of", a_string, "is", length_of_the_string)  
+      
+    a_list = [1, 3, -8, 65.9] # a list  
+    a_list.sort() # `sort` is a method of built-in class `list`  
+    print("Sorted list is", a_list)  
+    min_value = min(a_list)  
+    print("Its smallest value is", min_value)
+
+Typically, you need to start creating your own classes when you have one or several functions with a long list of similar parameters, and it feels like repetition to use this list of parameters in several different places of your code.
+
+**************
+** Pictures **
+**************
+1.  : ['1*qv-tMZ-h9JqIsA96xsdd1g.png', '1*AnMRCVRKXIrIIBwAygOeKA.png', '1*kSshve9X6CKTij2xV0tCQg.png']
+2.  : ['1*34QfBgc23pD0Hwz8c9D4tw.png', '1*rRAfYeuxTDqkogaYg4CnQA.png']
+3.  : ['1*n21VB3imbUt7M7bETkH_Yg.png', '1*mZxglvz8mc22AWiR47uR7Q.png', '1*KGh2Jq1hdZ2k0dBrahl9dw.png']
+4.  : ['1*yn6hflnLB7iotARnFmfytw.png', '1*2sPaiqBKFRHnHRwxTwv1kw.png', '1*Dmo9Ld4eaA5yRNUMAo8rEA.png']
+5.  : ['1*IFGpMcgDPMVpf0OHljjvFg.png', '1*a7aFvWdbhu_SDvqH64tg_w.png']
+6.  : ['1*i_3klDEpvr0hlT-Hq3Yhqw.png', '1*yiThB2U5YvTl6qkuAu3jyQ.png', '1*r9n9cRhOysWSyfNsFDFm0A.png']
+7.  : ['1*Q1KVUGVqlN5YQ0JfKkHwmA.png', '1*Pcn_TIwj-UCL73ii7BimMQ.png', '1*yft3IM32daLJ653rJeyNJg.png']
+8. MIT Introduction to Deep Learning (2022) | 6.S191, https://youtu.be/7sB052Pz0sQ?t=1348 : []
+9.  : ['1*F3ropDp7SaLHG6j_pyIGWg.png', '1*tGa8oshF2HJ56NVSdpDDUw.png']
+10.  : ['1*sb5dbUzi-Hqkk1zeOoE2bw.png', '1*b_MP5oyuGMI6UZSGpoJhog.png']
