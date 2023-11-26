@@ -1,0 +1,74 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/python-learning-for-busy-people-2-3-code-blocks-ed743f28be63?source=about_page------------------------------------- **
+************************************************************
+
+
+# Python Pieces For Busy People 2/5: Code Blocks
+
+## Blocks make the difference between a long, boring code, and a short and efficient code. Learn how to use them, and how not to use them
+
+# Rules Of Thumb For Code Block Organising
+
+  * Only use the code blocks if your code is simpler with them   
+then without them;
+  * If you can use the standard Python methods instead of writing your code blocks, do it;
+  * Minimise the number of code blocks as long as it does not create repetitions;
+  * If there is a choice between several different code blocks, use the simpler one ( _for_ is simpler that _while_ and _def_ , and _class_ is the most complex code block).
+
+
+
+# What Does A Code Block In Python Look Like?
+
+In Python, a block is a section of code that is **executed as a single unit**. A block is two or more lines of code such that
+
+  1. a header line **starts with one of block key words,**
+  2. a header line **ends with a colon (:),**
+  3. a header line is followed by one or more indented lines of code.
+
+
+
+The indentation level of the block determines which statements are included in the block.
+
+There are 5 code blocks in this snippet, each is marked by a different color. There are four levels of the code blocks in this snippet, the `for` marked by yellow color is the innermost
+
+As in the example above, it’s possible to have code blocks inside code blocks.
+
+The word “ **indentation** ” comes from the word “dent”, which means “tooth” (like in “dental”). “The line is indented” means that there are **extra spaces** in the beginning of the line. Python will accept any number of extra spaces, but, for practical reasons, it’s usually **between 2 and 4 spaces**. [PEP 8](https://peps.python.org/pep-0008/), the Python style guide, recommends to use 4 spaces.
+
+## What Code Blocks Exist In Python?
+
+Six fundamental code blocks are listed below. Click on the links to open corresponding w3schools tutorials with “Try it yourself” buttons.
+
+  * [ **“if-elif-else**](https://www.w3schools.com/python/python_conditions.asp) **”** statement. **If the condition is True, the “if” code block will be executed (once).** If the condition is False, the “if”code block will be skipped, and, if “else” code block is present, it will be executed instead. It’s possible to introduce alternative conditions using “elif” statements;
+
+
+
+The third meme shows an “if” shorthand, see <https://www.w3schools.com/python/gloss_python_if_else_shorthand.asp>
+
+  * [**“for” loops**](https://www.w3schools.com/python/python_for_loops.asp) — **the code block will be repeated a pre-defined number of times, or will be repeated for each value in a pre-defined set of values** ;
+
+
+
+  * [ **“while” loops**](https://www.w3schools.com/python/python_while_loops.asp) is used rarer that “for” loops. **It’s needed for the fancy loops** , where an “if” loop cannot do the job. Typically, it’s used when there is an infinite loop, e.g. if the user needs to guess something and there is an unlimited number of attempts.
+
+
+
+  * [ **def — definitions of a function**](https://www.w3schools.com/python/python_functions.asp) Use functions when you need to **repeat something in different places of your code** , possibly even in different *.py files.  
+Defining a function is similar to writing a recipe: just defining it does not do anything. To use it, the developer needs to call it (i.e. execute it) after it was defined. Calling a function can be done multiple times, including in other *.py files.
+
+
+
+  * [ **classes**](https://www.w3schools.com/python/python_classes.asp) — you will only need to create them when your code becomes really complex, or you use some complex packages. See [this story](/@real.zyxxy/python-pieces-for-busy-people-4-5-composite-types-in-python-2e67bb217945) for more details.
+
+
+
+**************
+** Pictures **
+**************
+1.  : ['1*SZ-yDh16km4Bi0dlyabSdA.png', '1*yEk4bNAK5DYuM7KawqhTFA.png']
+2.  : ['1*P0NSttop6RrUlnqXnczUaQ.png']
+3. The third meme shows an “if” shorthand, see https://www.w3schools.com/python/gloss_python_if_else_shorthand.asp : ['1*acTZq8u7aJvguNLT9w-Mmw.png', '1*7WpgCz7kD5xA0Lt1KhMNRg.png', '1*yBswtQ58AqjbDGC10iW0EA.png']
+4.  : ['1*uXBg0VRcL12SVRusDRqn0A.png', '1*3T5bIYl_y2_GK781kTAkEw.jpeg', '1*MhU3p6reRJIrlahnEcBTdg.png']
+5.  : ['1*SD0N2ngZkHZbPO5FjqoG_g.png', '1*Sn354CbVXlPAWRoAM2EMMA.png', '1*KY_QozOhQVbuojg4q4fKnA.png']
+6.  : ['1*SuEBXFzBrJESh80xDFu1_Q.jpeg', '1*F3ropDp7SaLHG6j_pyIGWg.png']
