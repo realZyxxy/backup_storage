@@ -1,0 +1,93 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/python-learning-for-busy-people-1-3-resources-a81cd604cd99?source=about_page-------------------------------------&sk=d642604346531c1fedf6a3b28fa7eb52 **
+************************************************************
+
+
+# Python Pieces For Busy People 1/5: Learning Resources
+
+## What Type Of Knowledge Do I Have To Get, And How?
+
+# 0\. What’s The Best Way To Learn To Code In Python?
+
+Learning to code is similar to learning to play chess:
+
+  1. There is **a short list of fundamentals** that needs to be assimilated really well, and it’s accessible to anyone. It takes substantial amount hands-on practice to learn to “bend” these fundamental elements in different ways — this is what **the first meme, and part # 1 of this story** is about!
+  2. Learning pro-actively by asking questions is another good way to get better at coding!  
+There are **less fundamental commands** , modules etc. that can be looked up; unlike when playing chess, you are allowed look them up when coding. Typically, you will be finding them on Google, YouTube and StackOverflow — this is what **the second meme, and the part # 2 of this story** is about! Don’t worry about memorising them — if you use them often, you will remember.
+
+
+
+# 1\. Learning Python Fundamentals
+
+There are different ways to familiarise with Python fundamentals.
+
+A. If you can only spare **a few minutes in a row** , and/or dislike long explanations, opt for **a mobile phone app** ,
+
+B. If you prefer to spend an hour or three in front of their computers to take a deep dive, and **do a lot of reading or listening** before getting your hands dirty, opt for one of **Python courses** , watch a video course or read a book.   
+**Interactive courses are better,** because you are getting hands-on practice. If you opt for a video course or a book, make sure you do all the exercises — it’s impossible to learn to code without writing your own code!
+
+## 1.1. Duolingo-like Apps, e.g. Mimo — Quick Start, Best For Mobile Phone Users
+
+ **For whom?** These apps are very good for the beginners and also for those who want to refresh/systemase some prior knowledge. **It’s a brilliant way to assimilate the fundamentals of Python really well.**
+
+ **What is it like?** They is similar to Duolingo: there are no lectures — you learn as you “play”. The microlessons take 2–3 minutes to complete, you can stop and resume at any time. You earn points, compete against fellow learners, and will lose your app lives if you give wrong answers.
+
+One such app is [**Mimo**](https://mimo.org), the best Self-Improvement App of 2018 on Google Play. Its free version is prefectly adequate to learn the fundamentals. [SoloLearn (its alternative name is “Learn Python”)](https://www.sololearn.com) is very similar, except the ads in its free version are much more annoying. Enki is another viable alternative; its paid-for version includes an AI tutor.
+
+## 1\. 2. Online Python Learning Courses, Including Interactive Courses and Video Courses)
+
+There are literally [**thousands of Python learning courses online**](https://www.classcentral.com/subject/python). Some offer certificates of completion.  
+The official Python website offers [a **curated list of learning resources for beginners**](https://wiki.python.org/moin/BeginnersGuide/Programmers), including recommended video tutorials and interactive tutorials.  
+Perhaps the most popular one is the [Python learning course offered by the Code Academy](https://www.codecademy.com/learn/learn-python-3): as of April 2023 almost 2 million students have enrolled into it!
+
+## 1.3. Python Learning Books
+
+There are [many books that explain Python fundamentals](https://www.amazon.co.uk/python-book-beginners/). I would single out [**a Python book that is aimed to help prepare for a GCSE exam**](https://www.amazon.co.uk/Python-Programming-Computer-Science-Revision/dp/1789088623/) (it is taken by British children at the age of 14–16). It’s short, fun to read, well designed, it emprasises all the right points (e.g. “Never trust the user”), and its programming challenges are well chosen.
+
+# 2\. Asking Python Questions
+
+Learning pro-actively by asking questions is a great way to get better at coding! Even seasoned professionals do it all the time.
+
+## 2.1. Google
+
+You know the drill.
+
+## 2.2. W3Schools — Best For Trying Python Commands Before Adding Them To Your Code
+
+You can use the website <https://www.w3schools.com/python/> to learn Python in a systematic way, going through the topics in the left-hand side menu.
+
+Its best use, however, is to **look up the commands** (e.g. search for “python random numbers w3schools” in your favourite search engine) **** and **press the “Try it yourself” buttons to run the bite-sized Python snippets** — this gives you a hands-on experience with the new material.
+
+## 2.3. StackOverflow — A Peer-to-Peer Programming Questions Website
+
+This website is very helpful, but you need to make sure your question is really good:
+
+  * make sure **your questions was not asked** before by someone else;
+  * your question needs to show what you have tried yourself before asking the community. Ideally, you should include[ **a minimal, reproducible example (snippet).**](https://stackoverflow.com/help/minimal-reproducible-example)
+
+
+
+## 2.4. ChatGTP And AI Assistants
+
+As of now, AI assistants and ChatGPT can be helpful. Here is what you can it can do:
+
+  * answer your programming-related questions;
+  * draft code. Note that ChatGPT is unable to execute the code, or verify its correctness in any way, so it will be up to human to check its correctness;
+  * review the code you have written, and suggest improvements.
+
+
+
+However, as of May 2023, they are [**not fully reliable**](/@real.zyxxy/using-chatgpt-to-review-tiny-python-snippets-6f236d689858). To use with caution.
+
+**************
+** Pictures **
+**************
+1.  : ['1*MxSR2JPdPRajvocaJgf1ZA.jpeg', '1*VeDnTMw9k8AQuAFTSS74iQ.png', '1*7piVvxCYY_G5erhsNytsPA.jpeg']
+2.  : ['1*qBmc5bRqUOduP2O9alqpVw.jpeg']
+3.  : ['1*v29c1HdWC0m_9kLdcOB3BA.jpeg', '1*tU_PSvWystdsCV4W0Iy8Hw.jpeg']
+4.  : ['1*tzncfmBFk_a8akfc15-dgA.jpeg']
+5.  : ['1*e8sO8gzJxwiMmvzVMkPvgg.png', '1*oCBRf-QOs5-JCZ5SyJMFgQ.jpeg', '1*qYUTPRHim7WQ1NPXpc62Pw.jpeg']
+6.  : ['1*L-9Cs7BrG9NgYQgy57T4YQ.png']
+7.  : ['1*pD2NwckTFBKAPsTDMcDw1g.jpeg', '1*YIucx3EQB7lhiYAZ6FmTUw.jpeg', '1*EnHKRnAYCKNbYu4ZllYk1A.jpeg']
+8.  : ['1*DTGL0iXTGWJ23y5sHC2ZHg.jpeg', '1*Ic7d4ftCtr8T_jWV86lVlg.jpeg', '1*wLuBXyKyYc84NBu7GEjGEg.jpeg']
