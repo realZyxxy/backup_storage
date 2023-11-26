@@ -1,0 +1,35 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/having-your-code-reviewed-f37a7f48175c?source=about_page-------------------------------------&sk=c146446e8261c1acdac3b0c3bb06ad9c **
+************************************************************
+
+
+# Having Your Code Reviewed
+
+Code reviews are indispensable to improvement of your skills. They also give you an idea of how easy it will be for other people to change your code, should such need arise (and also how easy will it be for you to understand your code if you return to it after a few months/years).
+
+Once you have assimilated the core elements of the programming language, asking to review it will be one of the best ways to improve your coding skills.
+
+## ChatGTP Code Reviews
+
+AI became part of the coding process in late 2022, and, while it’s not perfect, it can already be helpful. However, ChatGPT can also be very misleading — see [**my story about ChatGTP reviews of Python snippets**](/@real.zyxxy/using-chatgpt-to-review-tiny-python-snippets-6f236d689858) for the detailed results.
+
+## Peer Code Reviews
+
+If you are working in a team of professional developers, **it’s a standard practice to review your colleague’s code, and to have your code reviewed by them.** If this practice is not in place, you should consider switching jobs. If the code you are working on is proprietary, it’s the only way your code can be reviewed.
+
+If you are learning, working independently, or if you are working on an open-source project, here are a places where you can get a review:
+
+  * [ **CodeReview @ StackExchange**](https://codereview.stackexchange.com) **:** it’s from the same family of websites as the more famous stackoverflow.com. The reviews there are free, and the quality is generally quite good. In most occasions, your code will be viewed by several people, so you will get more comprehensive feedback. Take a note that you need to make sure your code runs correctly before you submit it to be reviewed on this website. Also, if your question is not well received, it can be voted down.
+  * [ **Local Python groups**](https://www.meetup.com/find/?keywords=python&location=gb--17--London&distance=hundredMiles): local Python groups are on the other edge of the spectre: perhaps the prospective reviewers won’t be 100% sober, but much friendlier than online options.
+  *  **Python Discord server** : the invitation link is [**here**](https://discord.com/invite/python) **.**
+  * [ **Reddit Python community**](https://www.reddit.com/r/Python/): it counts 1.1 million Pythonista, and you might come across [**people who are looking for Python code to be reviewed**](https://www.reddit.com/r/Python/comments/13vj3kn/reviewing_public_code/) **.**
+  *  **Facebook Python groups** : some code posted [**there**](https://www.facebook.com/groups/pythonclcoding) is notoriously suboptimal, but, if you are stuck, it’s better than nothing.
+
+
+
+**************
+** Pictures **
+**************
+1.  : ['1*ZGrq8EErGC3wHUQ7MHyXEw.png', '1*2pgQcvF6xvm8wgooIJCEvg.png', '1*y0HWnDf-Cd3V6AOIPlxsKQ.png']
+2.  : ['1*K2Kb_7NeyhNbZlQFSDtqHg.png', '1*U3QiOVXYaPh4mvt2cQVbcg.png', '1*SECibF1eY9tzv3mQ-CPimw.jpeg']
