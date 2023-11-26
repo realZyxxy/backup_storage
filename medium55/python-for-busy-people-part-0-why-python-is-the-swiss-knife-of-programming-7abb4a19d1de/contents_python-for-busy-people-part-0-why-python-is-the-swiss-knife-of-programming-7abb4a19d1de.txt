@@ -1,0 +1,48 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/python-for-busy-people-part-0-why-python-is-the-swiss-knife-of-programming-7abb4a19d1de?source=about_page-------------------------------------&sk=eed9ccf298eaf5475bc36d61561bec3a **
+************************************************************
+
+
+# Python Pieces For Busy People 0/5: Why Python Is The Swiss Knife Of Programming
+
+Python is versatile and easy to learn, but can be slow and not suitable for some purposes.
+
+## What’s Great About Python
+
+  * It’s very quick to learn, and it’s possible to write the code quickly;
+  * The code is very compact, there is no clutter;
+  * It’s extremely popular, widely used and and well integrated: Excel, images, PDFs, databases, financial data fetching, data science, AI in general and ChatGPT in particular, and more are supported through various packages.
+
+
+
+## What’s Not Great About Python
+
+  * It’s more resource-intense than other programming languages:   
+Python is slower, its multithread support is limiter, and it consumes more memory;
+  * Python is not great for mobile apps development, and is not suitable for client-side web development (although Anaconda’s <https://pyscript.com/> might fix the latter problem for data visualisation).
+
+
+
+Python code is clutter-free…
+
+… and easy to learn …
+
+… and has a lot of uses, which made Python #4 most used programming language, according to StackOverflow 2022 survey …
+
+… but can be very slow.
+
+## Sources
+
+  * <https://www.altexsoft.com/blog/python-pros-and-cons/>
+  * <https://survey.stackoverflow.co/2022/#most-popular-technologies-platform-learn>
+
+
+
+**************
+** Pictures **
+**************
+1. Python code is clutter-free… : ['1*wc6Stvn8P3_XFqS-bCGsSw.png', '1*EWpQfLOtIXfkTyJDYjDcDA.jpeg', '1*vxYtEipkuU0sDm-g_pnGsQ.png']
+2. … and easy to learn … : ['1*kqiBpuNqwqObYn1DblS1ag.png', '1*A9QIUjKZE074AsLALeJJ1Q.png', '1*7zy_POSSovyDjLJl_WIOPA.jpeg']
+3. … and has a lot of uses, which made Python #4 most used programming language, according to StackOverflow 2022 survey … : ['1*cmLCKtrufscijBqHRu2Z8A.png', '1*-zUZJQAeqahUUyD5lslV1A.png', '1*7xcyfkjKGII6uyjRLZ-YLQ.png']
+4. … but can be very slow. : ['1*QjqYhS7GHKUvqQhoPL5wsg.jpeg', '1*fOnoiyQREFm_P33Ik0RYSA.jpeg']
