@@ -1,0 +1,109 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/python-for-busy-people-3-1-3-atomic-types-73f97c36f8d6?source=about_page-------------------------------------&sk=803e16dfb164aa35fa3f70c59f262ed0 **
+************************************************************
+
+
+# Python Pieces For Busy People 3/5: “Atomic” Types
+
+## Boolean, integer, float, string and noneType, and how to avoid common mistakes when using these types.
+
+## 5 “atomic” data types in Python
+
+  * [ **Boolean**](https://www.w3schools.com/python/python_booleans.asp): can be either False or True;
+  * [ **Integer**](https://www.w3schools.com/python/python_numbers.asp): can be any whole number, positive or negative;
+  * [ **Float**](https://www.w3schools.com/python/gloss_python_float.asp) **:** can be any decimal number;
+  * [ **String**](https://www.w3schools.com/python/python_strings.asp) **:** any sequence letters, numbers, and any other Unicode characters;
+  * NoneType: it has only one value, [**None**](https://www.w3schools.com/python/ref_keyword_none.asp), which is usually used as a placeholder.
+
+
+
+## Operators
+
+Booleans, integers, floats and strings support [**operators**](https://www.w3schools.com/python/python_operators.asp) **(** this includes arithmetic operators, comparison operators, logical operators, assignment operators like on memes below, and more).
+
+Next, there are a few useful type-specific facts you might want to know.
+
+## Booleans
+
+  *  **Any value can be cast (converted) to a boolean**. This conversion happens implicitly in an “if” statement.   
+For example, a string, a tuple, or a list, will be converted to True if it contains at least one character (element); if it’s empty ( `“”`, `()`, or `[]`), it will be converted to False. A number will be False if it’s 0, and True otherwise.
+  * `== True`, like in expression `something == True,` is **redundant**. In this case, `something` is enough.   
+For completeness, `something == False` is also redundant, it should be `not something` instead.
+  * Comparisons, the most common way to obtain a boolean value, **can be chained:**  
+`a < b and b <= c` is equivalent to `a < b <= c`.   
+The latter is shorter and clearer.
+
+
+
+ **Integers**
+
+  * Unlike in other programming languages, there is **no minimal/maximal value of Python’s integer** : it can be as small, or as big, as you like.
+  * Two operators that are very useful when working with integers, but often overlooked, are **the** **floor division and the modulus** operator:
+
+
+    
+    
+    print(225 // 11) # prints 20  
+    print(225 % 11)  # prints  5
+
+ **Floats**
+
+  * Avoid using `==` with floats, because they might be slightly imprecise because of the **_numerical noise_** :
+
+
+    
+    
+    print(8 - 10 * (8 / 11) - 8 / 11) # prints -6.661338147750939e-16, should be 0  
+    print(8 - 10 * 8 / 11 - 8 / 11) # prints 2.220446049250313e-16, should be 0
+
+If you need to make a comparison, use some reasonable tolerance,   
+e.g. `-1e-8 < f1 — f2 < 1e-8`.
+
+  * Package `math` defines **infinity** , `math.inf`, which can be useful, e.g. as the initial value
+
+
+
+ **Strings**
+
+  * It’s possible to **use either “”s or ‘’s** to delimit Python strings — use whatever you like best, or find more convenient.
+
+
+    
+    
+    str_1 = "It's a new string."  
+    str_2 = 'Say "Hello, string!"'  
+    print(str_1, str_2)
+
+  * Python strings support [**operators**](https://www.w3schools.com/python/python_operators.asp), and come with [**many useful built-in methods**](https://www.w3schools.com/python/python_strings_methods.asp). It’s better to use the existing methods than to spend your valuable time recreating them.
+  * Strings are essentially [**tuples**](https://www.w3schools.com/python/python_tuples.asp), which means that it’s not possible to change them, but it’s possible to add elements at the end, concatenate, create slices etc.
+
+
+    
+    
+    str1 = "abcdefgh"  
+    str2 = str1[:3] + "y" + str1[4:]   
+    print(str2) # prints `abcyefgh`  
+    str3 = str1  
+    str3 += 'ijklm'  
+    print(str3) # prints `abcyefghijklm`  
+    print(str1) # still `abcdefgh`  
+    str1[3] = "y" # error! strings cannot be changed  
+    
+
+  * Each [**Unicode**](https://www.freecodecamp.org/news/everything-you-need-to-know-about-encoding/) character has a unique numeric code. Use `ord` to find a numeric code of a character, and `chr` to convert a number into a character which code is this number.  
+When Python compares/orders strings, it essentially converts every character of the string into its numeric code, and compares/orders this obtained tuples of numbers, e.g. `"aA"` is `(97, 65)` etc.
+
+
+    
+    
+    print(ord('a'), ord("A"), ord("0")) # prints 97 65 48  
+    print(chr(99), chr(68), chr(56))  # prints c D 8  
+    print("aA" < "bcd") # prints True
+
+**************
+** Pictures **
+**************
+1.  : ['1*QlEF20sJpVzDWFx_AMh1PQ.jpeg', '1*hefO1yMyKQbXvyDcVLlCFg.png', '1*bDgvulFo1bUKkl5WBjrb9g.jpeg']
+2.  : ['1*DU6Bg-QoRgXzDARb4_9mug.png', '1*ocOFEcWn9zk9AtuJRMqa1g.jpeg']
+3.  : ['1*DkIGyYvGSdjc8mFiFJKCPg.png', '1*zoQ4Orp7cE0e6HJ7eOe1Bg.png']
