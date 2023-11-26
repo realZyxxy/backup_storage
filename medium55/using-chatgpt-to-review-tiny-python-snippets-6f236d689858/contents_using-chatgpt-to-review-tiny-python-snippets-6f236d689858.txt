@@ -1,0 +1,115 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/using-chatgpt-to-review-tiny-python-snippets-6f236d689858 **
+************************************************************
+
+
+# Using ChatGPT To Review Tiny Python Snippets
+
+## It’s very inconsistent: good on some runs, very misleading on other runs
+
+I have asked ChatGPT 3.5 to optimise and review 3 line-long and 4 line-long Python snippets. I was less than impressed by the four responses I was getting through GUI (very inconsistent and often wrong). Eight responses obtained through Python API were much better. Contrary to what I expected, based on these eight runs increasing the temperature from 0.0 to 0.9 yielded a better result (more details, but no fantasies). Scroll to the conclusion to see why this is happening!
+
+## Forkable Projects
+
+The link to the **GitHub project** is [**here**](https://github.com/realZyxxy/ChatGPT_review_optimise_Python_code),   
+and the link to the **repl** is [**here**](https://replit.com/@zyxxy/ChatGPTreviewoptimisePythoncode#main.py).
+
+My story that explains how to get **a Python “Hello, ChatGPT World!”** project running in under 5 minutes is [**here**](/@real.zyxxy/hello-chatgpt-world-run-chatgpt-inside-a-python-script-in-5-minutes-4c9f4bdb6e28).
+
+## Attempt 0: Optimising A 3 Line-Long Snippet, 5/5
+
+My first query was about **optimisation** of the following code
+    
+    
+    n = int(input())   
+    li = [i*i for i in range(n)]   
+    print(li[0:n])
+
+As I hoped for, ChatGPT has suggested to drop the unnecessary slicing `[0:40]`and `[0:n]`. Since I have requested the optimisation rather than a review, I was happy with the result, even though the possible issues with `int(input()) `have not been flagged.
+
+Eliminating unnecessary slicing was done in all 4 runs
+
+## Attempt 1: Adding An Assert And Asking For A Review, 3/5
+
+My second code analysis request was similar to the one above, except that I have added an `assert` .
+
+When I used Python API, the response was not as great.   
+The t=0.0 review is not very good: I was complimented for using the slicing.   
+The t=0.9 review is better: no misleading compliments, and there was a good point about the invalid inputs handing.
+
+The code review obtained through below GUI is noticeably worse:
+
+ **+** An input prompt is definitely useful;  
+ **+** Catching a possible casting error with [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) is useful;  
+ **-** Unlike in my first request, ChatGPT has failed to identify the unnecessary slicing;  
+ **-** I think that catching the assertion error and printing a message is an over-engineering, adding the same message to `assert` would have been neater …
+    
+    
+    try:  
+        n = int(input("Enter a non-negative integer: "))  
+        assert n >= 0, "Error: Input must be non-negative."  
+    ...
+
+… and more efficient than catching an exception and then printing the same message.
+    
+    
+      
+    try:  
+        n = int(input("Enter a non-negative integer: "))  
+        assert n >= 0  
+    ...  
+    except AssertionError:  
+        print("Error: Input must be non-negative.")
+
+## Attempt 2: Removing An Assert And Asking For A Review, 4.5/5 and 2/5
+
+I decided to go back to the original 3 lines-long snippet, and to ask ChatGPT to **review** it. I have also specifically asked ChatGPT to forget about the review above, hoping for a cleaner result.
+
+The reviews obtained though Python API were quite good: the unnecessary slicing was flagged, and `int(input())`was improved on, in different ways. Just as in attempt 1, using temperature 0.9 yielded a better result.
+
+I would say that the review obtained through GUI interface not very helpful:
+
+ **+** An input prompt is definitely useful;  
+ **-** Catching a possible casting error with a general `except:` is worse that using [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError) suggested above;  
+ **-** Unlike in my first request, ChatGPT has failed to identify the unnecessary slicing;  
+ **-** Raising a ValueError when it can be confused with the ValueError resulting from a type casting error, and then immediately catching it below, and printing a message instead, is both very confusing and suboptimal from the performance point of view.
+
+## Attempt 3: Same Request As In Attempt 0, 5/5 and 0/5
+
+I have specifically asked to forget about my previous code-related requests, and then copy-pasted the same code optimisation request as in attempt 0 above.
+
+The responses obtained though Python API were essentially the same as in attempt 0, which is good. Again, the t=0.9 response was better, this time because of the details that were included.
+
+However, I was somewhat horrified by the response obtained through GUI:
+
+ **Inconsitency:** The prompt was the same as in my Attempt 0, but the response of ChatGPT was so different. It failed to suggest to handle the exception that could be raised by `int(input())`, and in addition to that:   
+**Point 2 of the response:** It was suggesting to use `range(n)` instead of `range(0, n)`, whereas it was`range(n)`in my snippet!  
+ **Point 3 of the response:** it sort of identified unnecessary slicing, but, instead of just dropping the slicing and offering to print `print(li)` it suggested to use `print(*li)`, which has a different appearance;  
+ **Point 4 of the response:** its suggestion is much more complex than what I had in my original snippet, thus likely to do more harm than good, in spite of tiny performance improvement.
+
+## Further ChatGTP Python Code Reviews
+
+So far it seems like asking for Python code reviews through GUI interface yields worse outcomes. But how could it be true, if the underlying engine is the same as used by ChatGTP Python API?
+
+I have run the same — word by word — requests through another account, and got nice, much more correct reviews. And, while re-runing the same same requests though Python API, I have got a “halucinating” review. This confirms that the way ChatGTP is run is not affecting the quality of the results.
+
+## Conclusion
+
+GUI and Python API are using the same engine, thus the differences are due to random nature of the engine.  
+Thus, ChatGTP code reviews can be useful, but they are very random, and can be erroneous.  
+Further research is in order to quantify the quality of the reviews, and to identify if it’s possible to improve on it.
+
+**************
+** Pictures **
+**************
+1.  : ['1*pN3VeVr7BBQE9Sg3pSQUoA.png', '1*gJGsKbHCr1NaSCNNAi4GFg.png']
+2. Eliminating unnecessary slicing was done in all 4 runs : ['1*vqYOV1Y310LTEwug7fVarA.png', '1*wAZx04ExCDbL4vuGk8F_dw.png']
+3.  : ['1*hGXOMQoQBRYY3eaJLjayUg.png', '1*zUBcsegThaGIQBk6lwoGgg.png']
+4.  : ['1*I36UvBL_hJfjK0p725OkYg.png']
+5.  : ['1*yvAnUsNq9kz9kYzQ7Hto2w.png', '1*4ObowdzGqnDkiaTk4Eu5Jg.png']
+6.  : ['1*P_L7K3w0pVz0vHw07IttPA.png']
+7.  : ['1*W9de3WbnH7vvoubOG4yBkA.png', '1*E8GXrJV5pkZxW2jmv-dhJg.png']
+8.  : ['1*dxUNTwMzt8B2vu5lX5_Vww.png', '1*A7Oc9kGrU7ZHLXiucNzeAQ.png']
+9.  : ['1*4O3ElSs8EIIQpvA8gDTwMA.png', '1*Xs7p4gvDdw57vjQxJI_gnw.png', '1*iC0IGx1TCCKkT2A_5KFBXA.png']
+10.  : ['1*EBO0sIVtaDeQBdFGBe3SqA.png', '1*exuVqx1mYuNtuw9SZ_VKPg.png']
