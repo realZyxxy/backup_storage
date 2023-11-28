@@ -4,22 +4,22 @@
 ************************************************************
 # Hello, ChatGPT World! Run ChatGPT inside a Python script in 5 minutes
 
-## You could run a ChatGPT prompt inside a Python script in under 5 minutes, at 0 financial cost.
+## You could run a ChatGPT prompt inside a Python script in under 5 minutes at 0 financial cost and 0 maintenance burden
 
-To achieve this, you will need 4 elements
+To achieve this, you will need 4 elements:
 
-  1.  **A Python environment where you will be running the script.** If you don’t have one, follow [my guide set up a web-based Replit environment](/@real.zyxxy/get-a-web-based-pro-grade-python-environment-in-5-minutes-at-0-cost-8843f5a07f88) in 5 minutes at 0 financial cost, and 0 maintenance burden;
+  1.  **A Python environment where you will be running the script.** If you don’t have one, follow [my guide to set up a web-based Replit environment](/@real.zyxxy/get-a-web-based-pro-grade-python-environment-in-5-minutes-at-0-cost-8843f5a07f88) in 5 minutes at 0 financial cost and 0 maintenance burden;
   2. An **openai** package added to your Python environment;
-  3.  **Your** **OpenAI API key** : this unique sequence of characters is needed so that OpenAI could grant you access. OpenAI generates it free of charge on their website;
-  4.  **A Python script** that calls an **openai** package — get it as a [**.py file**](https://github.com/realZyxxy/HelloChatGPTWorld/blob/main/main.py), or fork the [**GitHub project**](https://github.com/realZyxxy/HelloChatGPTWorld), or fork the [**repl**](https://replit.com/@zyxxy/HelloChatGPTWorld) **.** The script is short and self-explanatory.
+  3.  **Your** **OpenAI API key** : this unique sequence of characters is needed so that OpenAI can grant you access. OpenAI generates it free of charge on their website;
+  4.  **A Python script** that calls an **openai** package — you can either get it as a [**.py file**](https://github.com/realZyxxy/HelloChatGPTWorld/blob/main/main.py) or fork the [**GitHub project**](https://github.com/realZyxxy/HelloChatGPTWorld) **,** or fork the [**repl**](https://replit.com/@zyxxy/HelloChatGPTWorld) **.** The script is short and self-explanatory.
 
 
 
-Now let’s discuss these elements in more detail.
+Let’s discuss these elements in more detail.
 
 ## Getting An OpenAI API Key
 
-Firstly, you will need to get **an account with OpenAI** — **sign up**[ **here**](https://chat.openai.com/auth/login) if you don’t have it yet. You will need to provide them an e-mail address and a mobile phone number. It will take under 5 minutes. Free tier is sufficient for our needs.
+Firstly, you need to get **an account with OpenAI** — **sign up**[ **here**](https://chat.openai.com/auth/login) if you don’t have it yet. You need to provide them with an e-mail address and a mobile phone number. It takes under 5 minutes. The free tier is sufficient for our needs.
 
 Next, head to <https://platform.openai.com/account/api-keys> and generate your API key.
 
@@ -27,31 +27,25 @@ Next, head to <https://platform.openai.com/account/api-keys> and generate your A
 
 We call ChatGPT through [openai package.](https://pypi.org/project/openai/)
 
-If you use **Replit** , you don’t have to do anything! The package will be added to your project automatically first time you run your script.
+If you use **Replit** , you don’t have to do anything! The package will be added to your project automatically the first time you run your script.
 
-If you use **Python engine installed on your computer** , you will need to install this package yourself — follow the instructions detailed on <https://pypi.org/project/openai/>
+If you use a **Python engine installed on your computer** , you will need to install this package yourself — follow the instructions detailed at <https://pypi.org/project/openai/>
 
-## Saving Your API Key As An Environment Variable
+## Using Your API Key In Your Code
 
- **You will need to save your OpenAI API Key as a system variable called “OPENAI_API_KEY”.**
+You should not add the value of your API key to your code in plain text because it will compromise the security of your access.
 
-You need to do this because are supposed to keep your API keys to yourself. Storing your API key as plain text inside your scripts is a bad practice: your account could be compromised, and/or your API key can be disabled. Thus, it’s recommended to save your API keys as environment variables. It won’t take more than a couple of minutes.
-
-  * [ **Replit**](/@real.zyxxy/get-a-web-based-pro-grade-python-environment-in-5-minutes-at-0-cost-8843f5a07f88) **users:** you will need to [set up a secret](https://docs.replit.com/programming-ide/workspace-features/storing-sensitive-information-environment-variables) in every repl that uses openai package. It only takes 2 button clicks and 2 copy-pastes. Don’t forget to press the “Add new secret” button at the end to save your changes.
-  *  **Windows users:**[Windows 10 instructions are here](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0), [Windows 11 instructions are here](https://www.alphr.com/set-environment-variables-windows-11/).
-  *  **MacOS users:** to set up a permanent system variable, you will need to edit either ~/.zshenv file (MacOS 10.5 or later) or ~/.bash-profile file (previous versions of MacOS). Instructions [here](https://tecadmin.net/setting-up-the-environment-variables-in-macos/).
-
-
+Saving your API Key as a system variable [as explained here](/@real.zyxxy/using-access-credentials-in-python-code-securely-7253894fdff4?sk=044bdb23562078cd2494c8aafdeaf5e1) is often a viable choice, although there could be more secure choices. If the system variable option is acceptable for you, **save your OpenAI API Key as a system variable called “OPENAI_API_KEY” — this is required to be able to run the project described below.**
 
 ## The Python Script
 
- **The Python script** that calls an OpenAI package is available as a [**.py file**](https://github.com/realZyxxy/HelloChatGPTWorld/blob/main/main.py), or you can fork the [**GitHub project**](https://github.com/realZyxxy/HelloChatGPTWorld), or fork the [**repl**](https://replit.com/@zyxxy/HelloChatGPTWorld) **.**
+ **The Python script** that calls an OpenAI package is available as a [**.py file**](https://github.com/realZyxxy/HelloChatGPTWorld/blob/main/main.py), or you can fork the [**GitHub project**](https://github.com/realZyxxy/HelloChatGPTWorld) or fork the [**repl**](https://replit.com/@zyxxy/HelloChatGPTWorld) **.**
 
 The script is short and self-explanatory. **Run** it, and ChatGPT will respond
 
 or something in a similar style.
 
-To **play** with this basic example, start by changing two variables, _prompt_ and _temperature,_ specified in the beginning of the script.
+To **play** with this basic example, start by changing two variables, _prompt_ and _temperature,_ specified at the beginning of the script.
     
     
     prompt = "Hello, the brave new ChatGPT world!" # That's your chat prompt  
@@ -59,7 +53,7 @@ To **play** with this basic example, start by changing two variables, _prompt_ a
       
     temperature = 0.9 # temperature's value must be a number between 0.0 and 1.0,   
     # 0.0 being the most deterministic, consistent ChatGPT mode,  
-    # and 1.0 being the most randon, unpredictable, creative ChatGPT mode.
+    # and 1.0 being the most random, unpredictable, creative ChatGPT mode.
 
 These variables will be passed to a method of a class defined in openai package as below:
     
@@ -68,7 +62,7 @@ These variables will be passed to a method of a class defined in openai package 
         model="gpt-3.5-turbo",  
         messages=[{"role": 'user', "content": prompt}],  
         temperature=temperature # a number between 0 and 1  
-        # temperature is the degree of randomness of the model's output  
+        # temperature is the degree of randomness of the output of the model  
       )  
     response = long_response.choices[0].message["content"]
 
