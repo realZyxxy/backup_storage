@@ -1,0 +1,98 @@
+
+************************************************************
+** Backing up https://medium.com/@real.zyxxy/get-a-web-based-pro-grade-python-environment-in-5-minutes-at-0-cost-8843f5a07f88 **
+************************************************************
+
+
+# Get a web-based pro-grade Python environment in 5 minutes at 0 cost
+
+Just set up a [**GitHub**](https://github.com) **account** and a [**replit**](https://replit.com) **account** , and you will get a convenient, scalable, professional Python setup at zero cost!
+
+Actually, this set-up will work for pretty much [any programming language](https://blog.replit.com/nix), but only need Python here.
+
+# Step 1: Get A GitHub Account
+
+## What is GitHub?
+
+As of January 2023, [GitHub](https://github.com) is used by over 100 million people! Essentially, GitHub is a web-based file storage system with many nice, but optional, features. The minimal use, that we will need in the next step, is to use it as an ID to create a [Replit](https://replit.com) account (see step 2).
+
+## How Do I Get A GitHub Account? Only Takes 2–3 Minutes
+
+As of April 2023, you will need to do the following:
+
+  1. Open <https://github.com/signup> and enter your e-mail address,  
+then create a password,  
+enter a username (that will be your GitHub name),  
+out in/out of their emails (I went for **n** ),  
+and solve a quick CAPTCHA puzzle.
+  2. Enter a verification code that will be sent by e-mail (copy-paste works!)
+  3. Answer the question about the size of your team (e.g. “Just me”),   
+then the question about your experience (e.g. “Student”),   
+then tick your “special interests” (e.g. no ticks) and press “Ok”.
+
+
+
+That’s it, welcome to GitHub!
+
+# Step 2: Get A Replit Account
+
+## What Is Replit?
+
+[ **Replit.com**](https://replit.com) is a web-based programming environment. As of April 2023, it has 20 million users.  
+Replit supports **Python** and dozens of other programming languages. It was initially designed for kids, thus it’s very intuitive and clutter-free. As of 2023, some very advanced features ([ **real-time collaboration**](https://replit.com/site/multiplayer) with the users you invite to your projects, [**environment variables**](https://docs.replit.com/programming-ide/workspace-features/storing-sensitive-information-environment-variables), [connection to **GitHub**](https://docs.replit.com/category/using-git-on-replit), [full-blown **databases**](https://docs.replit.com/category/databases), and even an [**AI programming companion**](https://replit.com/learn/intro-to-ghostwriter)) make it suitable for the experienced developers.
+
+## How Do I Get A Replit Account? Only Takes 2 Minutes
+
+  1. Using the same browser as you did to get your GitHub account,   
+open <https://replit.com/signup> ;
+  2. Press “Continue with GitHub” button;
+  3. Press “Authorise Replit” button on the page you will be redirected to;
+  4. Tell Replit how you will be using it (e.g. “For personal use”),  
+what’s your level of experience (e.g. “New to coding”),  
+decide whether you want to go through a quick tutorial (I skipped).
+
+
+
+## How Do I Run My First Python Project? It Only Takes 1 Minute!
+
+Have your Replit account webpage open (it will be like <https://replit.com/@your_replit_name>), first create a new project like shown on the screenshot
+
+Then type
+    
+    
+    print("Hello, world!")
+
+in the file editor (that will be the file _main.py_ ), run it and you will see the message printed in the console window.
+
+Congratulations, you have successfully run your first Python-on-Replit project! It’s saved on the cloud automatically, and you can modify it, share it, invite other users to collaborate, or maybe start a new, more advanced project.
+
+A “Hello, world” repl
+
+# TL;DR
+
+## Pros And Cons of Web-based Environments
+
+For the beginners, the pros of the web-based environments certainly overweight the cons: you don’t need to install and maintain anything, and, if something happens to your computer, you won’t lose any data.
+
+The downside is that you don’t have as much control as over IDEs that you would install locally on your computer: some features might be missing, your projects would need more time to boot and, if you use free setup, your scripts will take more time to run.
+
+## Nice-To-Do GitHub Step: Enable Two-Factor Authentication
+
+Go to GitHub Settings -> Security (<https://github.com/settings/security>),  
+press “Enable two-factor authentication” (a green button at the bottom of the page), then follow the instructions!
+
+## Why Do I Need GitHub To Use Replit?
+
+You don’t, you can get a Replit account with e-mail only. The reasons why I recommend using GitHub is as follows:
+
+  * There is no downside, and if you choose to use GitHub later, it will take a few extra steps;
+  * GitHub authentication is more secure;
+  * GitHub will be useful to show off your projects, because it’s an industry standard, and Replit is not;
+  * Conversely, if you wish to keep your code to yourself, you can do it for free on GitHub whereas in Replit it’s a paid-for feature;
+  * If you choose to use another Python environment (e.g. a traditional IDE that you will install on your computer) in the future, you will be able to connect to GitHub and access the Python code you had created using Replit.
+
+
+
+**************
+** Pictures **
+**************
